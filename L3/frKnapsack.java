@@ -11,8 +11,7 @@ class Item {
     }
 }
 
-public class FractionalKnapsack {
-
+public class Main {
     public static void main(String[] args) {
 
         int W = 17;
@@ -25,20 +24,20 @@ public class FractionalKnapsack {
             new Item(3,28)
         };
 
-        Arrays.sort(items, (a,b) -> Double.compare(b.ratio, a.ratio));
+        Arrays.sort(items, (a, b) -> Double.compare(b.ratio, a.ratio));
 
-        double totalProfit = 0;
+        double totalP = 0;
 
         for(Item i : items) {
             if(W >= i.weight) {
                 W -= i.weight;
-                totalProfit += i.profit;
+                totalP += i.profit;
             } else {
-                totalProfit += i.ratio * W;
+                totalP += i.ratio * W;
                 break;
             }
         }
 
-        System.out.println("Maximum Profit = " + totalProfit);
+        System.out.println("Max Profit = " + totalP);
     }
 }
