@@ -75,3 +75,5 @@ public class Kruskal {
         k.kruskalMST(edges);
     }
 }
+
+fewfhrpo
